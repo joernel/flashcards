@@ -36,6 +36,14 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
+        val id = DetailFragmentArgs.fromBundle(requireArguments()).id
+
+        flashcards.firstOrNull { it.id == id}?.let {
+            with(binding) {
+                editTextTextMultiLine.setText(it.question)
+                editTextTextMultiLine2.setText(it.answer)
+            }
+        }
         return binding.root
     }
 

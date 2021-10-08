@@ -14,27 +14,27 @@ import com.moveblo.flashcards.model.Flashcard
 
 
 val flashcards = arrayListOf(
-    Flashcard("question 1", "answer 1"),
-    Flashcard("question 2", "answer 2"),
-    Flashcard("question 3", "answer 3"),
-    Flashcard("question 4", "answer 4"),
-    Flashcard("question 5", "answer 5"),
-    Flashcard("question 6", "answer 6"),
-    Flashcard("question 7", "answer 7"),
-    Flashcard("question 1", "answer 1"),
-    Flashcard("question 2", "answer 2"),
-    Flashcard("question 3", "answer 3"),
-    Flashcard("question 4", "answer 4"),
-    Flashcard("question 5", "answer 5"),
-    Flashcard("question 6", "answer 6"),
-    Flashcard("question 7", "answer 7"),
-    Flashcard("question 1", "answer 1"),
-    Flashcard("question 2", "answer 2"),
-    Flashcard("question 3", "answer 3"),
-    Flashcard("question 4", "answer 4"),
-    Flashcard("question 5", "answer 5"),
-    Flashcard("question 6", "answer 6"),
-    Flashcard("question 77", "answer 77"),
+    Flashcard(1,"question 1", "answer 1"),
+    Flashcard(2,"question 2", "answer 2"),
+    Flashcard(3,"question 3", "answer 3"),
+    Flashcard(4,"question 4", "answer 4"),
+    Flashcard(5,"question 5", "answer 5"),
+    Flashcard(6,"question 6", "answer 6"),
+    Flashcard(7,"question 7", "answer 7"),
+    Flashcard(8,"question 1", "answer 1"),
+    Flashcard(9,"question 2", "answer 2"),
+    Flashcard(10,"question 3", "answer 3"),
+    Flashcard(11,"question 4", "answer 4"),
+    Flashcard(12,"question 5", "answer 5"),
+    Flashcard(13,"question 6", "answer 6"),
+    Flashcard(14,"question 7", "answer 7"),
+    Flashcard(15,"question 1", "answer 1"),
+    Flashcard(16,"question 2", "answer 2"),
+    Flashcard(17,"question 3", "answer 3"),
+    Flashcard(18,"question 4", "answer 4"),
+    Flashcard(19,"question 5", "answer 5"),
+    Flashcard(20,"question 6", "answer 6"),
+    Flashcard(21,"question 77", "answer 77"),
 )
 
 
@@ -74,7 +74,8 @@ class ListAdapter(val flashcards: ArrayList<Flashcard>) :
         with(holder) {
             binding.textviewItemList.text =  flashcards[position].question
             binding.root.setOnClickListener {
-                Navigation.findNavController(binding.root).navigate(R.id.action_listFragment_to_detailFragment)
+                val action = ListFragmentDirections.actionListFragmentToDetailFragment(flashcards[position].id)
+                Navigation.findNavController(binding.root).navigate(action)
             }
         }
     }
