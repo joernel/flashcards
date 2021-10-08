@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">flashcards</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="welcome_text">Willkommen</string>
+    <string name="welcome_button">Start</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
